@@ -3,7 +3,7 @@ package com.tjazi.security.core.service.sessions;
 import java.util.HashMap;
 
 /**
- * Created by kr329462 on 04/10/15.
+ * Created by Krzysztof Wasiak on 04/10/15.
  */
 public class EphemeralSessionManagerImpl implements SessionsManager {
 

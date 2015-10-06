@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 /**
- * Created by kr329462 on 05/10/15.
+ * Created by Krzysztof Wasiak on 05/10/15.
  */
 @Service
 public class AuthenticatorImpl implements Authenticator {

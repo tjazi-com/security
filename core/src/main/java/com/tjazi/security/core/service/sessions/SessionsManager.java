@@ -1,7 +1,7 @@
 package com.tjazi.security.core.service.sessions;
 
 /**
- * Created by kr329462 on 04/10/15.
+ * Created by Krzysztof Wasiak on 04/10/15.
  */
 public interface SessionsManager {
 

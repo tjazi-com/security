@@ -3,7 +3,7 @@ package com.tjazi.security.core.service.core;
 import java.util.UUID;
 
 /**
- * Created by kr329462 on 05/10/15.
+ * Created by Krzysztof Wasiak on 05/10/15.
  */
 public interface Authenticator {
 

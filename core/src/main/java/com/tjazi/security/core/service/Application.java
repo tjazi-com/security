@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by kr329462 on 04/10/15.
+ * Created by Krzysztof Wasiak on 04/10/15.
  */
 
 @ComponentScan

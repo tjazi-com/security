@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by kr329462 on 04/10/15.
+ * Created by Krzysztof Wasiak on 04/10/15.
  */
 @Configuration
 public class SecuritySessionsConfig {
