@@ -26,9 +26,4 @@ public class AuthenticatorImpl implements Authenticator {
 
         return null;
     }
-
-    @Override
-    public boolean isAuthorizationTokenValid(UUID userUuid, String authorizationToken) {
-        return false;
-    }
 }
