@@ -17,12 +17,12 @@ public class UserSecurityDAODataModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "UUID")
+    @Column(name = "ProfileUUID")
     @Type(type = "uuid-char")
-    private UUID userUuid;
+    private UUID profileUuid;
 
-    @Column(name="MD5Password")
-    private String md5Password;
+    @Column(name="PasswordHash")
+    private String passwordHash;
 
 
 
