@@ -72,6 +72,29 @@ public class SecurityCore_Tests {
     }
 
     @Test
+    public void authenticateUser_ExceptionWhenCallingDao_Test() {
+
+        final UUID profileUuid = UUID.randomUUID();
+        final String passwordHash = "Sample Password Hash";
+
+        UserAuthenticationRequestMessage requestMessage = new UserAuthenticationRequestMessage();
+        requestMessage.setProfileUuid(profileUuid);
+        requestMessage.setPasswordHash(passwordHash);
+
+        when(securityDAO.findByProfileUuid(profileUuid))
+                .thenThrow(Exception.class);
+
+        // call main function
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+
+        // assertion and verification
+        verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
+
+        assertEquals(UserAuthenticationResponseStatus.GENERAL_ERROR, responseMessage.getAuthenticationResponseStatus());
+    }
+
+
+    @Test
     public void authenticateUser_SecurityRecordNotFound_Test() {
 
         final UUID profileUuid = UUID.randomUUID();
@@ -91,8 +114,6 @@ public class SecurityCore_Tests {
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
 
         assertEquals(UserAuthenticationResponseStatus.PROFILE_UUID_NOT_FOUND, responseMessage.getAuthenticationResponseStatus());
-        assertNull(responseMessage.getAuthorizationToken());
-        assertNull(responseMessage.getProfileUuid());
     }
 
     @Test
@@ -115,7 +136,58 @@ public class SecurityCore_Tests {
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
 
         assertEquals(UserAuthenticationResponseStatus.GENERAL_ERROR, responseMessage.getAuthenticationResponseStatus());
-        assertNull(responseMessage.getAuthorizationToken());
-        assertNull(responseMessage.getProfileUuid());
     }
+
+    @Test
+    public void authenticateUser_PasswordDontMatch_Test() {
+
+        final UUID profileUuid = UUID.randomUUID();
+        final String passwordHash = "Sample Password Hash";
+
+        UserAuthenticationRequestMessage requestMessage = new UserAuthenticationRequestMessage();
+        requestMessage.setProfileUuid(profileUuid);
+        requestMessage.setPasswordHash(passwordHash + "not_match");
+
+        UserSecurityDAODataModel storedDaoModel = new UserSecurityDAODataModel();
+        storedDaoModel.setProfileUuid(profileUuid);
+        storedDaoModel.setPasswordHash(passwordHash);
+
+        when(securityDAO.findByProfileUuid(profileUuid))
+                .thenReturn(Collections.singletonList(storedDaoModel));
+
+        // call main function
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+
+        // assertion and verification
+        verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
+
+        assertEquals(UserAuthenticationResponseStatus.WRONG_PASSWORD, responseMessage.getAuthenticationResponseStatus());
+    }
+
+    @Test
+    public void authenticateUser_PasswordMatch_Test() {
+
+        final UUID profileUuid = UUID.randomUUID();
+        final String passwordHash = "Sample Password Hash";
+
+        UserAuthenticationRequestMessage requestMessage = new UserAuthenticationRequestMessage();
+        requestMessage.setProfileUuid(profileUuid);
+        requestMessage.setPasswordHash(passwordHash);
+
+        UserSecurityDAODataModel storedDaoModel = new UserSecurityDAODataModel();
+        storedDaoModel.setProfileUuid(profileUuid);
+        storedDaoModel.setPasswordHash(passwordHash);
+
+        when(securityDAO.findByProfileUuid(profileUuid))
+                .thenReturn(Collections.singletonList(storedDaoModel));
+
+        // call main function
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+
+        // assertion and verification
+        verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
+
+        assertEquals(UserAuthenticationResponseStatus.OK, responseMessage.getAuthenticationResponseStatus());
+    }
+
 }

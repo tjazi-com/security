@@ -5,6 +5,7 @@ import com.tjazi.security.core.service.dao.model.UserSecurityDAODataModel;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseStatus;
+import org.junit.rules.ExpectedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,13 +53,27 @@ public class SecurityCoreImpl implements SecurityCore {
             throw new IllegalArgumentException(errorMessage);
         }
 
-        List<UserSecurityDAODataModel> profilesByUuid = userSecurityDAO.findByProfileUuid(profileUuid);
+        List<UserSecurityDAODataModel> profilesByUuid = null;
 
         UserAuthenticationResponseMessage responseMessage = new UserAuthenticationResponseMessage();
+
+        try
+        {
+            profilesByUuid = userSecurityDAO.findByProfileUuid(profileUuid);
+        }
+        catch (Exception ex) {
+
+            log.error("Problem when getting record from database for profile UUID: " + profilesByUuid);
+            responseMessage.setAuthenticationResponseStatus(UserAuthenticationResponseStatus.GENERAL_ERROR);
+            return responseMessage;
+        }
 
         int numberOfRecords = profilesByUuid.size();
 
         if (numberOfRecords == 0) {
+
+            // this is problem, because we have authentication request for given profile
+            // which most likely means there's already profile with that ID registered in Profiles service
             log.warn("There's no security record for profile UUID: " + profileUuid);
 
             responseMessage.setAuthenticationResponseStatus(UserAuthenticationResponseStatus.PROFILE_UUID_NOT_FOUND);
@@ -72,8 +87,18 @@ public class SecurityCoreImpl implements SecurityCore {
             return responseMessage;
         }
 
+        UserSecurityDAODataModel extractedProfile = profilesByUuid.get(0);
 
+        if (!extractedProfile.getPasswordHash().equals(passwordHash)) {
+            log.debug("Given password hash doesn't match stored one for profile UUID: " + profileUuid);
 
-        return null;
+            responseMessage.setAuthenticationResponseStatus(UserAuthenticationResponseStatus.WRONG_PASSWORD);
+            return responseMessage;
+        }
+
+        // so far so good, authentication succeed
+        responseMessage.setAuthenticationResponseStatus(UserAuthenticationResponseStatus.OK);
+
+        return responseMessage;
     }
 }

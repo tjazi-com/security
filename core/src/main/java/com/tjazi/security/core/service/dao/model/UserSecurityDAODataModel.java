@@ -24,6 +24,27 @@ public class UserSecurityDAODataModel {
     @Column(name="PasswordHash")
     private String passwordHash;
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
+    public UUID getProfileUuid() {
+        return profileUuid;
+    }
+
+    public void setProfileUuid(UUID profileUuid) {
+        this.profileUuid = profileUuid;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
 }
