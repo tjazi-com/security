@@ -17,22 +17,22 @@ public class SecurityClientImpl implements SecurityClient {
         this.restClient = restClient;
     }
 
-    public RegisterNewUserCredentialsResponseMessage registerNewUserCredentials(UUID userUuid, String md5Password) {
+    public RegisterNewUserCredentialsResponseMessage registerNewUserCredentials(UUID profileUuid, String passwordHash) {
 
         RegisterNewUserCredentialsRequestMessage requestMessage = new RegisterNewUserCredentialsRequestMessage();
 
-        requestMessage.setUserUuid(userUuid);
-        requestMessage.setMd5Password(md5Password);
+        requestMessage.setProfileUuid(profileUuid);
+        requestMessage.setPasswordHash(passwordHash);
         return (RegisterNewUserCredentialsResponseMessage)restClient.sendRequestGetResponse(
                 requestMessage, RegisterNewUserCredentialsResponseMessage.class);
     }
 
-    public UserAuthenticationResponseMessage authenticateUser(UUID userUuid, String md5Password)
+    public UserAuthenticationResponseMessage authenticateUser(UUID profileUuid, String passwordHash)
     {
         UserAuthenticationRequestMessage requestMessage = new UserAuthenticationRequestMessage();
 
-        requestMessage.setUserUuid(userUuid);
-        requestMessage.setMd5Password(md5Password);
+        requestMessage.setProfileUuid(profileUuid);
+        requestMessage.setPasswordHash(passwordHash);
 
         return (UserAuthenticationResponseMessage) restClient.sendRequestGetResponse(
                 requestMessage, UserAuthenticationResponseMessage.class);

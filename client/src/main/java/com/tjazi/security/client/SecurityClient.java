@@ -9,6 +9,6 @@ import java.util.UUID;
  */
 public interface SecurityClient {
 
-    RegisterNewUserCredentialsResponseMessage registerNewUserCredentials(UUID userUuid, String md5Password);
-    UserAuthenticationResponseMessage authenticateUser(UUID userUuid, String md5Password);
+    RegisterNewUserCredentialsResponseMessage registerNewUserCredentials(UUID profileUuid, String passwordHash);
+    UserAuthenticationResponseMessage authenticateUser(UUID profileUuid, String passwordHash);
 }
