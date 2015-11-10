@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="815414b0-be1d-4f91-81a9-2735ab58f6ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsRequestMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsRequestMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsResponseMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsResponseMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationRequestMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationRequestMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationResponseMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationResponseMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../core/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java" afterPath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java" afterPath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/src/test/java/unittests/Authenticator_Tests.java" afterPath="$PROJECT_DIR$/../core/src/test/java/unittests/Authenticator_Tests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../messages/.idea/workspace.xml" />
     </list>
     <ignored path="security-client.iws" />
     <ignored path=".idea/workspace.xml" />

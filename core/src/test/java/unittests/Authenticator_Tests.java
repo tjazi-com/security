@@ -1,6 +1,5 @@
 package unittests;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import com.tjazi.security.core.service.core.SecurityCoreImpl;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import org.junit.Rule;
@@ -40,8 +39,8 @@ public class Authenticator_Tests {
         thrown.expectMessage("requestMessage.ProfileUUID is null");
 
         UserAuthenticationRequestMessage requestMessage = new UserAuthenticationRequestMessage();
-        requestMessage.setUserUuid(null);
-        requestMessage.setMd5Password("sample password hash");
+        requestMessage.setProfileUuid(null);
+        requestMessage.setPasswordHash("sample password hash");
 
         securityCore.authenticateUser(requestMessage);
     }
@@ -53,8 +52,8 @@ public class Authenticator_Tests {
         thrown.expectMessage("requestMessage.PasswordHash is null or empty");
 
         UserAuthenticationRequestMessage requestMessage = new UserAuthenticationRequestMessage();
-        requestMessage.setUserUuid(UUID.randomUUID());
-        requestMessage.setMd5Password("");
+        requestMessage.setProfileUuid(UUID.randomUUID());
+        requestMessage.setPasswordHash("");
 
         securityCore.authenticateUser(requestMessage);
     }

@@ -16,6 +16,4 @@ public interface SecurityCore {
      * @return - Authorization token
      */
     UserAuthenticationResponseMessage authenticateUser(UserAuthenticationRequestMessage authenticationRequestMessage);
-
-
 }

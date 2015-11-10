@@ -1,6 +1,5 @@
 package com.tjazi.security.core.service.core;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseMessage;
 import org.slf4j.Logger;
@@ -27,7 +26,7 @@ public class SecurityCoreImpl implements SecurityCore {
             throw new IllegalArgumentException(errorMessage);
         }
 
-        UUID profileUuid = authenticationRequestMessage.getUserUuid();
+        UUID profileUuid = authenticationRequestMessage.getProfileUuid();
 
         if (profileUuid == null) {
             String errorMessage = "requestMessage.ProfileUUID is null";
@@ -36,7 +35,7 @@ public class SecurityCoreImpl implements SecurityCore {
             throw new IllegalArgumentException(errorMessage);
         }
 
-        String passwordHash = authenticationRequestMessage.getMd5Password();
+        String passwordHash = authenticationRequestMessage.getPasswordHash();
 
         if (passwordHash == null || passwordHash.isEmpty()) {
             String errorMessage = "requestMessage.PasswordHash is null or empty";
