@@ -37,15 +37,4 @@ public class SecurityClientImpl implements SecurityClient {
         return (UserAuthenticationResponseMessage) restClient.sendRequestGetResponse(
                 requestMessage, UserAuthenticationResponseMessage.class);
     }
-
-    public UserAuthorizationResponseMessage authorizeUser(UUID userUuid, String authorizationToken)
-    {
-        UserAuthorizationRequestMessage requestMessage = new UserAuthorizationRequestMessage();
-
-        requestMessage.setUserUuid(userUuid);
-        requestMessage.setAuthorizationToken(authorizationToken);
-
-        return (UserAuthorizationResponseMessage) restClient.sendRequestGetResponse(requestMessage,
-                UserAuthorizationResponseMessage.class);
-    }
 }

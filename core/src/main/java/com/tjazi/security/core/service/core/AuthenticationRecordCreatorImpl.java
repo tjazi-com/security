@@ -11,11 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class AuthenticationRecordCreatorImpl implements AuthenticationRecordCreator {
 
-    @Autowired
-    private UserSecurityDAO userSecurityDao;
-
     private static final Logger log = LoggerFactory.getLogger(AuthenticationRecordCreatorImpl.class);
-
 
     @Override
     public void registerNewUserCredentials(Object newUserData) {
@@ -25,9 +21,6 @@ public class AuthenticationRecordCreatorImpl implements AuthenticationRecordCrea
         }
 
         UserSecurityDAODataModel daoDataModel = this.convertNewUserDataMessageToDaoModel(newUserData);
-
-
-
 
     }
 
