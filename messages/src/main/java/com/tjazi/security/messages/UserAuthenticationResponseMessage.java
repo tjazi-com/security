@@ -5,13 +5,13 @@ import com.tjazi.security.messages.enums.UserAuthenticationResponseStatus;
 import java.util.UUID;
 
 /**
- * Created by kr329462 on 07/10/15.
+ * Created by Krzysztof Wasiak on 07/10/15.
  */
 public class UserAuthenticationResponseMessage {
 
     private UserAuthenticationResponseStatus authenticationResponseStatus;
     private String authorizationToken;
-    private UUID userUuid;
+    private UUID profileUuid;
 
     public UserAuthenticationResponseStatus getAuthenticationResponseStatus() {
         return authenticationResponseStatus;
@@ -29,11 +29,11 @@ public class UserAuthenticationResponseMessage {
         this.authorizationToken = authorizationToken;
     }
 
-    public UUID getUserUuid() {
-        return userUuid;
+    public UUID getProfileUuid() {
+        return profileUuid;
     }
 
-    public void setUserUuid(UUID userUuid) {
-        this.userUuid = userUuid;
+    public void setProfileUuid(UUID profileUuid) {
+        this.profileUuid = profileUuid;
     }
 }

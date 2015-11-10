@@ -3,7 +3,7 @@ package com.tjazi.security.messages;
 import com.tjazi.security.messages.enums.RegisterNewUserCredentialsResponseStatus;
 
 /**
- * Created by kr329462 on 07/10/15.
+ * Created by Krzysztof Wasiak on 07/10/15.
  */
 public class RegisterNewUserCredentialsResponseMessage {
 

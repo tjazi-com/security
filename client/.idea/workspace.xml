@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="815414b0-be1d-4f91-81a9-2735ab58f6ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__com_tjazi_security_messages_1_0_SNAPSHOT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__org_mockito_mockito_core_1_10_19.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_2_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/.idea/libraries/Maven__org_springframework_spring_test_4_1_6_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../core/src/test/java/unittests/Authenticator_Tests.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/AuthenticationRecordCreator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/AuthenticationRecordCreatorImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/Authenticator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/core/AuthenticatorImpl.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../core/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/core.iml" afterPath="$PROJECT_DIR$/../core/core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/pom.xml" afterPath="$PROJECT_DIR$/../core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/dao/UserSecurityDAO.java" afterPath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/dao/UserSecurityDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java" afterPath="$PROJECT_DIR$/../core/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsRequestMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsRequestMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsResponseMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsResponseMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationRequestMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationRequestMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationResponseMessage.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/UserAuthenticationResponseMessage.java" />
     </list>
     <ignored path="security-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -558,7 +541,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

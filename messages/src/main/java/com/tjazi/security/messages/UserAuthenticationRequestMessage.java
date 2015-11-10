@@ -3,27 +3,27 @@ package com.tjazi.security.messages;
 import java.util.UUID;
 
 /**
- * Created by kr329462 on 07/10/15.
+ * Created by Krzysztof Wasiak on 07/10/15.
  */
 public class UserAuthenticationRequestMessage {
 
-    private UUID userUuid;
+    private UUID profileUuid;
 
-    private String md5Password;
+    private String passwordHash;
 
-    public UUID getUserUuid() {
-        return userUuid;
+    public UUID getProfileUuid() {
+        return profileUuid;
     }
 
-    public void setUserUuid(UUID userUuid) {
-        this.userUuid = userUuid;
+    public void setProfileUuid(UUID profileUuid) {
+        this.profileUuid = profileUuid;
     }
 
-    public String getMd5Password() {
-        return md5Password;
+    public String getPasswordHash() {
+        return passwordHash;
     }
 
-    public void setMd5Password(String md5Password) {
-        this.md5Password = md5Password;
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
     }
 }
