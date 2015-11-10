@@ -1,7 +1,5 @@
 package com.tjazi.security.messages;
 
-import com.tjazi.security.messages.enums.UserAuthenticationResponseStatus;
-
 import java.util.UUID;
 
 /**

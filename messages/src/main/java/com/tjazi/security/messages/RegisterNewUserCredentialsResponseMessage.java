@@ -1,7 +1,5 @@
 package com.tjazi.security.messages;
 
-import com.tjazi.security.messages.enums.RegisterNewUserCredentialsResponseStatus;
-
 /**
  * Created by Krzysztof Wasiak on 07/10/15.
  */
