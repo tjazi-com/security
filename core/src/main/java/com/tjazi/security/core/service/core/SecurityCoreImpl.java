@@ -1,9 +1,11 @@
 package com.tjazi.security.core.service.core;
 
+import com.tjazi.security.core.service.dao.UserSecurityDAO;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -15,6 +17,9 @@ import java.util.UUID;
 public class SecurityCoreImpl implements SecurityCore {
 
     private static final Logger log = LoggerFactory.getLogger(SecurityCoreImpl.class);
+
+    @Autowired
+    private UserSecurityDAO userSecurityDAO;
 
     @Override
     public UserAuthenticationResponseMessage authenticateUser(UserAuthenticationRequestMessage authenticationRequestMessage) {

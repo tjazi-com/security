@@ -5,11 +5,10 @@ package com.tjazi.security.messages.enums;
  */
 public enum UserAuthenticationResponseStatus {
 
-    OK,
-    UNKNOWN_USER_NAME,
-    WRONG_PASSWORD,
-    WRONG_PARAMETERS,
-    GENERAL_AUTHENTICATION_ERROR,
+    UNKNOWN,
 
-    UNKNOWN
+    OK,
+    PROFILE_UUID_NOT_FOUND,
+    WRONG_PASSWORD,
+    GENERAL_ERROR
 }
