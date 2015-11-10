@@ -5,7 +5,7 @@ import com.tjazi.security.core.service.dao.UserSecurityDAO;
 import com.tjazi.security.core.service.dao.model.UserSecurityDAODataModel;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseMessage;
-import com.tjazi.security.messages.enums.UserAuthenticationResponseStatus;
+import com.tjazi.security.messages.UserAuthenticationResponseStatus;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -90,7 +90,32 @@ public class SecurityCore_Tests {
         // assertion and verification
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
 
-
+        assertEquals(UserAuthenticationResponseStatus.PROFILE_UUID_NOT_FOUND, responseMessage.getAuthenticationResponseStatus());
+        assertNull(responseMessage.getAuthorizationToken());
+        assertNull(responseMessage.getProfileUuid());
     }
 
+    @Test
+    public void authenticateUser_MoreThanOneRecordPerUuid_Test() {
+
+        final UUID profileUuid = UUID.randomUUID();
+        final String passwordHash = "Sample Password Hash";
+
+        UserAuthenticationRequestMessage requestMessage = new UserAuthenticationRequestMessage();
+        requestMessage.setProfileUuid(profileUuid);
+        requestMessage.setPasswordHash(passwordHash);
+
+        when(securityDAO.findByProfileUuid(profileUuid))
+                .thenReturn(Collections.<UserSecurityDAODataModel>nCopies(3, new UserSecurityDAODataModel()));
+
+        // call main function
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+
+        // assertion and verification
+        verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
+
+        assertEquals(UserAuthenticationResponseStatus.GENERAL_ERROR, responseMessage.getAuthenticationResponseStatus());
+        assertNull(responseMessage.getAuthorizationToken());
+        assertNull(responseMessage.getProfileUuid());
+    }
 }
