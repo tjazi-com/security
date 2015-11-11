@@ -13,11 +13,11 @@ import java.util.UUID;
 public interface SecurityCore {
 
     /**
-     * Authenticate user by his user UUID and password (as: password hash string)
+     * Authenticate profile by its UUID and password (as: password hash string)
      * @param authenticationRequestMessage Authentication request message
      * @return Message with authentication status
      */
-    UserAuthenticationResponseMessage authenticateUser(UserAuthenticationRequestMessage authenticationRequestMessage);
+    UserAuthenticationResponseMessage authenticateProfile(UserAuthenticationRequestMessage authenticationRequestMessage);
 
     /**
      * Register new security profile (profile UUID and password hash)

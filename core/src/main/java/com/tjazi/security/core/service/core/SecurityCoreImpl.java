@@ -23,7 +23,7 @@ public class SecurityCoreImpl implements SecurityCore {
     private UserSecurityDAO userSecurityDAO;
 
     @Override
-    public UserAuthenticationResponseMessage authenticateUser(UserAuthenticationRequestMessage authenticationRequestMessage) {
+    public UserAuthenticationResponseMessage authenticateProfile(UserAuthenticationRequestMessage authenticationRequestMessage) {
 
         if (authenticationRequestMessage == null) {
             String errorMessage = "authenticationRequestMessage is null";

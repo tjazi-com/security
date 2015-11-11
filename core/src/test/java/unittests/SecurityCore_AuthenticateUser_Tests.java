@@ -41,7 +41,7 @@ public class SecurityCore_AuthenticateUser_Tests {
 
         thrown.expect(IllegalArgumentException.class);
 
-        securityCore.authenticateUser(null);
+        securityCore.authenticateProfile(null);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class SecurityCore_AuthenticateUser_Tests {
         requestMessage.setProfileUuid(null);
         requestMessage.setPasswordHash("sample password hash");
 
-        securityCore.authenticateUser(requestMessage);
+        securityCore.authenticateProfile(requestMessage);
     }
 
     @Test
@@ -67,7 +67,7 @@ public class SecurityCore_AuthenticateUser_Tests {
         requestMessage.setProfileUuid(UUID.randomUUID());
         requestMessage.setPasswordHash("");
 
-        securityCore.authenticateUser(requestMessage);
+        securityCore.authenticateProfile(requestMessage);
     }
 
     @Test
@@ -84,7 +84,7 @@ public class SecurityCore_AuthenticateUser_Tests {
                 .thenThrow(Exception.class);
 
         // call main function
-        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateProfile(requestMessage);
 
         // assertion and verification
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
@@ -107,7 +107,7 @@ public class SecurityCore_AuthenticateUser_Tests {
                 .thenReturn(Collections.<UserSecurityDAODataModel>emptyList());
 
         // call main function
-        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateProfile(requestMessage);
 
         // assertion and verification
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
@@ -129,7 +129,7 @@ public class SecurityCore_AuthenticateUser_Tests {
                 .thenReturn(Collections.<UserSecurityDAODataModel>nCopies(3, new UserSecurityDAODataModel()));
 
         // call main function
-        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateProfile(requestMessage);
 
         // assertion and verification
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
@@ -155,7 +155,7 @@ public class SecurityCore_AuthenticateUser_Tests {
                 .thenReturn(Collections.singletonList(storedDaoModel));
 
         // call main function
-        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateProfile(requestMessage);
 
         // assertion and verification
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
@@ -181,7 +181,7 @@ public class SecurityCore_AuthenticateUser_Tests {
                 .thenReturn(Collections.singletonList(storedDaoModel));
 
         // call main function
-        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateUser(requestMessage);
+        UserAuthenticationResponseMessage responseMessage = securityCore.authenticateProfile(requestMessage);
 
         // assertion and verification
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
