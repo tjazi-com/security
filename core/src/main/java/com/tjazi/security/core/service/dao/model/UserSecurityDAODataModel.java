@@ -17,11 +17,11 @@ public class UserSecurityDAODataModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "ProfileUUID")
+    @Column(name = "ProfileUUID", unique = true, nullable = false)
     @Type(type = "uuid-char")
     private UUID profileUuid;
 
-    @Column(name="PasswordHash")
+    @Column(name="PasswordHash", unique = false, nullable = false)
     private String passwordHash;
 
     public long getId() {
