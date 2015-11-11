@@ -5,10 +5,23 @@ package com.tjazi.security.messages;
  */
 public enum RegisterNewUserCredentialsResponseStatus {
 
-    OK,
-    USER_ALREADY_REGISTERED,
-    NOT_SUPPORTED_ARGUMENTS,
-    GENERAL_REGISTRATION_FAILURE,
+    /**
+     * Unknown / not set status
+     */
+    UKNOWN,
 
-    UNKNOWN_ERROR
+    /**
+     * Registration went successfully
+     */
+    OK,
+
+    /**
+     * There's already record with the given profile UUID
+     */
+    PROFILE_UUID_ALREADY_REGISTERED,
+
+    /**
+     * General error when registering profile, most likely: problems with database
+     */
+    GENERAL_ERROR
 }

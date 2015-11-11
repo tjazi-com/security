@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f649465-1ebb-43c7-b4c3-a73dfc7d3a6e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_RegisterNewProfile_Tests.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_Tests.java" afterPath="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_AuthenticateUser_Tests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java" afterPath="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_Tests.java" afterPath="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_Tests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/.idea/.name" afterPath="$PROJECT_DIR$/../messages/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/.idea/misc.xml" afterPath="$PROJECT_DIR$/../messages/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../messages/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsResponseStatus.java" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsResponseStatus.java" />
     </list>
     <ignored path="tjazi-security-core.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,7 +26,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tjazi-security-core$Run_all_Unit_Testcases.coverage" NAME="Run all Unit Testcases Coverage Results" MODIFIED="1447163070045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/tjazi-security-core$Run_all_Unit_Testcases.coverage" NAME="Run all Unit Testcases Coverage Results" MODIFIED="1447232415721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.*</FILTER>
     </SUITE>
   </component>
@@ -33,61 +39,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SecurityCoreImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java">
+      <file leaf-file-name="SecurityCore_RegisterNewProfile_Tests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_RegisterNewProfile_Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.5769231">
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityCore_Tests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_Tests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42887932">
-              <caret line="87" column="48" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3650#3676#0" expanded="true" />
-                <element signature="e#4568#4594#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserSecurityDAODataModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-              <folding>
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#670#671#0" expanded="true" />
-                <element signature="e#706#707#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
-                <element signature="e#838#839#0" expanded="true" />
-                <element signature="e#877#878#0" expanded="true" />
-                <element signature="e#912#913#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1016#1017#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserSecurityDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/UserSecurityDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3639#3665#0" expanded="true" />
+                <element signature="e#4830#4856#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,11 +86,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/Authenticator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/AuthenticatorImpl.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java" />
         <option value="$PROJECT_DIR$/src/test/java/unittests/Authenticator_Tests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/UserSecurityDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java" />
         <option value="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_Tests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_AuthenticateUser_Tests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/unittests/SecurityCore_RegisterNewProfile_Tests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java" />
       </list>
     </option>
@@ -182,6 +144,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Production" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -196,7 +173,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -411,21 +387,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Production" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="core">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,10 +397,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service" />
     <property name="SearchEverywhereHistoryKey" value="reimpo&#9;ACTION&#9;Maven.Reimport" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../messages" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -447,7 +407,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Run all Unit Testcases">
-    <configuration default="false" name="SecurityCore_Tests.authenticateUser_SecurityRecordNotFound_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionOnProfileUuid_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="unittests.*" />
@@ -458,8 +418,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_Tests" />
-      <option name="METHOD_NAME" value="authenticateUser_SecurityRecordNotFound_Test" />
+      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_RegisterNewProfile_Tests" />
+      <option name="METHOD_NAME" value="registerNewProfileCredentials_ExceptionOnProfileUuid_Test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -473,7 +433,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SecurityCore_Tests.authenticateUser_MoreThanOneRecordPerUuid_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionOnNullOrEmptyPasswordHash_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="unittests.*" />
@@ -484,8 +444,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_Tests" />
-      <option name="METHOD_NAME" value="authenticateUser_MoreThanOneRecordPerUuid_Test" />
+      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_RegisterNewProfile_Tests" />
+      <option name="METHOD_NAME" value="registerNewProfileCredentials_ExceptionOnNullOrEmptyPasswordHash_Test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -499,7 +459,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SecurityCore_Tests.authenticateUser_PasswordDontMatch_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="unittests.*" />
@@ -510,8 +470,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_Tests" />
-      <option name="METHOD_NAME" value="authenticateUser_PasswordDontMatch_Test" />
+      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_RegisterNewProfile_Tests" />
+      <option name="METHOD_NAME" value="registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -525,7 +485,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SecurityCore_Tests.authenticateUser_PasswordMatch_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_DuplicateRecordFound_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="unittests.*" />
@@ -536,8 +496,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_Tests" />
-      <option name="METHOD_NAME" value="authenticateUser_PasswordMatch_Test" />
+      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_RegisterNewProfile_Tests" />
+      <option name="METHOD_NAME" value="registerNewProfileCredentials_DuplicateRecordFound_Test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -551,7 +511,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SecurityCore_Tests.authenticateUser_ExceptionWhenCallingDao_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_RecordSavedSuccesfully_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="unittests.*" />
@@ -562,8 +522,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_Tests" />
-      <option name="METHOD_NAME" value="authenticateUser_ExceptionWhenCallingDao_Test" />
+      <option name="MAIN_CLASS_NAME" value="unittests.SecurityCore_RegisterNewProfile_Tests" />
+      <option name="METHOD_NAME" value="registerNewProfileCredentials_RecordSavedSuccesfully_Test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1030,19 +990,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Run all Unit Testcases" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_SecurityRecordNotFound_Test" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_MoreThanOneRecordPerUuid_Test" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_PasswordDontMatch_Test" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_PasswordMatch_Test" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_ExceptionWhenCallingDao_Test" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionOnProfileUuid_Test" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionOnNullOrEmptyPasswordHash_Test" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_DuplicateRecordFound_Test" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_RecordSavedSuccesfully_Test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_ExceptionWhenCallingDao_Test" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_PasswordMatch_Test" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_PasswordDontMatch_Test" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_MoreThanOneRecordPerUuid_Test" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SecurityCore_Tests.authenticateUser_SecurityRecordNotFound_Test" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_RecordSavedSuccesfully_Test" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_DuplicateRecordFound_Test" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionOnNullOrEmptyPasswordHash_Test" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionOnProfileUuid_Test" />
       </list>
     </recent_temporary>
   </component>
@@ -1066,48 +1026,49 @@
       <workItem from="1447144267323" duration="179000" />
       <workItem from="1447145734885" duration="256000" />
       <workItem from="1447160903553" duration="3232000" />
-      <workItem from="1447173601578" duration="5243000" />
+      <workItem from="1447173601578" duration="5825000" />
+      <workItem from="1447221418853" duration="3779000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SecurityCore_Tests_authenticateUser_ExceptionWhenCallingDao_Test - 2015.11.10 at 21h 36m 33s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_ExceptionWhenCallingDao_Test" configurationId="JUnit" />
+    <history-entry file="Run_all_Unit_Testcases - 2015.11.11 at 09h 00m 11s.xml">
+      <configuration name="Run all Unit Testcases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_ExceptionWhenCallingDao_Test - 2015.11.10 at 21h 39m 03s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_ExceptionWhenCallingDao_Test" configurationId="JUnit" />
+    <history-entry file="Run_all_Unit_Testcases - 2015.11.11 at 09h 00m 16s.xml">
+      <configuration name="Run all Unit Testcases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_MoreThanOneRecordPerUuid_Test - 2015.11.10 at 20h 25m 23s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_MoreThanOneRecordPerUuid_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_DuplicateRecordFound_Test - 2015.11.11 at 08h 53m 33s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_DuplicateRecordFound_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_MoreThanOneRecordPerUuid_Test - 2015.11.10 at 20h 29m 00s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_MoreThanOneRecordPerUuid_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_DuplicateRecordFound_Test - 2015.11.11 at 08h 56m 43s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_DuplicateRecordFound_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_PasswordDontMatch_Test - 2015.11.10 at 21h 23m 54s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_PasswordDontMatch_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test - 2015.11.11 at 08h 43m 05s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_PasswordDontMatch_Test - 2015.11.10 at 21h 27m 53s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_PasswordDontMatch_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test - 2015.11.11 at 08h 46m 50s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_PasswordMatch_Test - 2015.11.10 at 21h 29m 15s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_PasswordMatch_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test - 2015.11.11 at 08h 49m 02s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_PasswordMatch_Test - 2015.11.10 at 21h 29m 28s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_PasswordMatch_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test - 2015.11.11 at 08h 49m 50s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_SecurityRecordNotFound_Test - 2015.11.10 at 20h 21m 30s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_SecurityRecordNotFound_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_RecordSavedSuccesfully_Test - 2015.11.11 at 08h 59m 26s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_RecordSavedSuccesfully_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SecurityCore_Tests_authenticateUser_SecurityRecordNotFound_Test - 2015.11.10 at 20h 23m 27s.xml">
-      <configuration name="SecurityCore_Tests.authenticateUser_SecurityRecordNotFound_Test" configurationId="JUnit" />
+    <history-entry file="SecurityCore_RegisterNewProfile_Tests_registerNewProfileCredentials_RecordSavedSuccesfully_Test - 2015.11.11 at 09h 00m 05s.xml">
+      <configuration name="SecurityCore_RegisterNewProfile_Tests.registerNewProfileCredentials_RecordSavedSuccesfully_Test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15349000" />
+    <option name="totallyTimeSpent" value="19710000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1116,17 +1077,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32380953" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1595136" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3233288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28755364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4055794" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39972714" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Amazon EC2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1134,7 +1096,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1150,7 +1111,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1158,6 +1121,56 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_AuthenticateUser_Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding>
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/UserSecurityDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1180,7 +1193,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1188,18 +1213,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_Tests.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_AuthenticateUser_Tests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3650#3676#0" expanded="true" />
-            <element signature="e#4568#4594#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1218,7 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1350,13 +1374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/model/SessionDataModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/sessions/EphemeralSessionManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1382,7 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,19 +1410,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="118" selection-start-line="17" selection-start-column="118" selection-end-line="17" selection-end-column="118" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/UserSecurityDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.51282054">
           <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1416,7 +1422,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/dao/model/UserSecurityDAODataModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.73717946">
           <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
             <element signature="e#608#609#0" expanded="true" />
@@ -1434,24 +1440,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.7692308">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_Tests.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/model/SessionDataModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42887932">
-          <caret line="87" column="48" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.16025642">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/rules/ExpectedException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64415586">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="e#2423#2424#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54545456">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_AuthenticateUser_Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7090517">
+          <caret line="154" column="67" selection-start-line="154" selection-start-column="67" selection-end-line="154" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3650#3676#0" expanded="true" />
-            <element signature="e#4568#4594#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tjazi/security/core/service/core/SecurityCoreImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15948276">
+          <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unittests/SecurityCore_RegisterNewProfile_Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5769231">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3639#3665#0" expanded="true" />
+            <element signature="e#4830#4856#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,7 @@
 package com.tjazi.security.core.service.core;
 
+import com.tjazi.security.messages.RegisterNewUserCredentialsRequestMessage;
+import com.tjazi.security.messages.RegisterNewUserCredentialsResponseMessage;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseMessage;
 
@@ -13,7 +15,14 @@ public interface SecurityCore {
     /**
      * Authenticate user by his user UUID and password (as: password hash string)
      * @param authenticationRequestMessage Authentication request message
-     * @return - Authorization token
+     * @return Message with authentication status
      */
     UserAuthenticationResponseMessage authenticateUser(UserAuthenticationRequestMessage authenticationRequestMessage);
+
+    /**
+     * Register new security profile (profile UUID and password hash)
+     * @param requestMessage Registration request message
+     * @return Message with registration status
+     */
+    RegisterNewUserCredentialsResponseMessage registerNewProfileCredentials(RegisterNewUserCredentialsRequestMessage requestMessage);
 }

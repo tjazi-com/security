@@ -2,10 +2,7 @@ package com.tjazi.security.core.service.core;
 
 import com.tjazi.security.core.service.dao.UserSecurityDAO;
 import com.tjazi.security.core.service.dao.model.UserSecurityDAODataModel;
-import com.tjazi.security.messages.UserAuthenticationRequestMessage;
-import com.tjazi.security.messages.UserAuthenticationResponseMessage;
-import com.tjazi.security.messages.UserAuthenticationResponseStatus;
-import org.junit.rules.ExpectedException;
+import com.tjazi.security.messages.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,5 +97,67 @@ public class SecurityCoreImpl implements SecurityCore {
         responseMessage.setAuthenticationResponseStatus(UserAuthenticationResponseStatus.OK);
 
         return responseMessage;
+    }
+
+    @Override
+    public RegisterNewUserCredentialsResponseMessage registerNewProfileCredentials(
+            RegisterNewUserCredentialsRequestMessage requestMessage) {
+
+        if (requestMessage == null) {
+            String errorMessage = "requestMessage is null";
+
+            log.error(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
+        }
+
+        UUID profileUuid = requestMessage.getProfileUuid();
+
+        if (profileUuid == null) {
+            String errorMessage = "requestMessage.ProfileUUID is null";
+
+            log.error(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
+        }
+
+        String passwordHash = requestMessage.getPasswordHash();
+
+        if (passwordHash == null || passwordHash.isEmpty()) {
+            String errorMessage = "requestMessage.PasswordHash is null or empty";
+
+            log.error(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
+        }
+
+        RegisterNewUserCredentialsResponseMessage responseMessage = new RegisterNewUserCredentialsResponseMessage();
+
+        try {
+            List<UserSecurityDAODataModel> duplicateProfiles = userSecurityDAO.findByProfileUuid(profileUuid);
+
+            int numberOfDuplicatedProfiles = duplicateProfiles.size();
+
+            if (numberOfDuplicatedProfiles > 0) {
+                log.error("Found {} duplicated security profiles for Profile UUID: {}",
+                        numberOfDuplicatedProfiles, profileUuid);
+
+                responseMessage.setRegistrationStatus(RegisterNewUserCredentialsResponseStatus.PROFILE_UUID_ALREADY_REGISTERED);
+                return responseMessage;
+            }
+
+            UserSecurityDAODataModel daoDataModel = new UserSecurityDAODataModel();
+            daoDataModel.setPasswordHash(passwordHash);
+            daoDataModel.setProfileUuid(profileUuid);
+
+            userSecurityDAO.save(daoDataModel);
+
+            responseMessage.setRegistrationStatus(RegisterNewUserCredentialsResponseStatus.OK);
+            return responseMessage;
+
+        } catch (Exception ex) {
+
+            log.error("Exception when calling userSecurityDAO.save()");
+
+            responseMessage.setRegistrationStatus(RegisterNewUserCredentialsResponseStatus.GENERAL_ERROR);
+            return responseMessage;
+        }
     }
 }
