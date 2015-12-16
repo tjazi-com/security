@@ -5,24 +5,31 @@ import com.tjazi.security.messages.*;
 import com.tjazi.lib.messaging.rest.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.Output;
+import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.messaging.MessageChannel;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.UUID;
 
 /**
  * Created by Krzysztof Wasiak on 09/10/15.
  */
+
 public class SecurityClientImpl implements SecurityClient {
 
-    private RestClient restClient;
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Autowired
+    @Output(Source.OUTPUT)
+    private MessageChannel messageChannel;
 
     private final static Logger log = LoggerFactory.getLogger(SecurityClientImpl.class);
 
     private final static String REGISTER_NEW_USER_CREDENTIALS_PATH = "/security/register";
     private final static String AUTHENTICATE_USER_PROFILE_PATH = "/security/authenticate";
-
-    public SecurityClientImpl(RestClient restClient){
-        this.restClient = restClient;
-    }
 
     public RegisterNewUserCredentialsResponseMessage registerNewUserCredentials(UUID profileUuid, String passwordHash) {
 
