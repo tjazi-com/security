@@ -6,9 +6,11 @@ import com.tjazi.lib.messaging.rest.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.UUID;
@@ -17,6 +19,7 @@ import java.util.UUID;
  * Created by Krzysztof Wasiak on 09/10/15.
  */
 
+@EnableBinding(Source.class)
 public class SecurityClientImpl implements SecurityClient {
 
     @Autowired
@@ -28,10 +31,9 @@ public class SecurityClientImpl implements SecurityClient {
 
     private final static Logger log = LoggerFactory.getLogger(SecurityClientImpl.class);
 
-    private final static String REGISTER_NEW_USER_CREDENTIALS_PATH = "/security/register";
     private final static String AUTHENTICATE_USER_PROFILE_PATH = "/security/authenticate";
 
-    public RegisterNewUserCredentialsResponseMessage registerNewUserCredentials(UUID profileUuid, String passwordHash) {
+    public void registerNewUserCredentials(UUID profileUuid, String passwordHash) {
 
         if (profileUuid == null) {
             String errorMessage = "profileUuid is null";
@@ -47,12 +49,12 @@ public class SecurityClientImpl implements SecurityClient {
             throw new IllegalArgumentException(errorMessage);
         }
 
-        RegisterNewUserCredentialsRequestMessage requestMessage = new RegisterNewUserCredentialsRequestMessage();
+        RegisterNewUserCredentialsRequestCommand requestMessage = new RegisterNewUserCredentialsRequestCommand();
 
         requestMessage.setProfileUuid(profileUuid);
         requestMessage.setPasswordHash(passwordHash);
-        return (RegisterNewUserCredentialsResponseMessage)restClient.sendRequestGetResponse(
-                REGISTER_NEW_USER_CREDENTIALS_PATH, requestMessage, RegisterNewUserCredentialsResponseMessage.class);
+
+        this.messageChannel.send(MessageBuilder.withPayload(requestMessage).build());
     }
 
     public UserAuthenticationResponseMessage authenticateUser(UUID profileUuid, String passwordHash)
@@ -76,7 +78,7 @@ public class SecurityClientImpl implements SecurityClient {
         requestMessage.setProfileUuid(profileUuid);
         requestMessage.setPasswordHash(passwordHash);
 
-        return (UserAuthenticationResponseMessage) restClient.sendRequestGetResponse(
-                AUTHENTICATE_USER_PROFILE_PATH, requestMessage, UserAuthenticationResponseMessage.class);
+        return restTemplate.postForObject(AUTHENTICATE_USER_PROFILE_PATH, requestMessage,
+                UserAuthenticationResponseMessage.class, (Object) null);
     }
 }
