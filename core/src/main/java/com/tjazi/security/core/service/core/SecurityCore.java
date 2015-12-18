@@ -1,11 +1,8 @@
 package com.tjazi.security.core.service.core;
 
-import com.tjazi.security.messages.RegisterNewUserCredentialsRequestMessage;
-import com.tjazi.security.messages.RegisterNewUserCredentialsResponseMessage;
+import com.tjazi.security.messages.RegisterNewUserCredentialsRequestCommand;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseMessage;
-
-import java.util.UUID;
 
 /**
  * Created by Krzysztof Wasiak on 05/10/15.
@@ -22,7 +19,7 @@ public interface SecurityCore {
     /**
      * Register new security profile (profile UUID and password hash)
      * @param requestMessage Registration request message
-     * @return Message with registration status
+     * @return True - registration went OK
      */
-    RegisterNewUserCredentialsResponseMessage registerNewProfileCredentials(RegisterNewUserCredentialsRequestMessage requestMessage);
+    boolean registerNewProfileCredentials(RegisterNewUserCredentialsRequestCommand requestMessage) throws Exception;
 }

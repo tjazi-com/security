@@ -3,9 +3,7 @@ package unittests;
 import com.tjazi.security.core.service.core.SecurityCoreImpl;
 import com.tjazi.security.core.service.dao.UserSecurityDAO;
 import com.tjazi.security.core.service.dao.model.UserSecurityDAODataModel;
-import com.tjazi.security.messages.RegisterNewUserCredentialsRequestMessage;
-import com.tjazi.security.messages.RegisterNewUserCredentialsResponseMessage;
-import com.tjazi.security.messages.RegisterNewUserCredentialsResponseStatus;
+import com.tjazi.security.messages.RegisterNewUserCredentialsRequestCommand;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -14,11 +12,12 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.context.annotation.Profile;
 
 import java.util.Collections;
 import java.util.UUID;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 /**
@@ -38,7 +37,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
     public UserSecurityDAO securityDAO;
 
     @Test
-    public void registerNewProfileCredentials_ExceptionOnNullInput_Test() {
+    public void registerNewProfileCredentials_ExceptionOnNullInput_Test() throws Exception {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("requestMessage is null");
@@ -47,12 +46,12 @@ public class SecurityCore_RegisterNewProfile_Tests {
     }
 
     @Test
-    public void registerNewProfileCredentials_ExceptionOnNullProfileUuid_Test() {
+    public void registerNewProfileCredentials_ExceptionOnNullProfileUuid_Test() throws Exception {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("requestMessage.ProfileUUID is null");
 
-        RegisterNewUserCredentialsRequestMessage requestMessage = new RegisterNewUserCredentialsRequestMessage();
+        RegisterNewUserCredentialsRequestCommand requestMessage = new RegisterNewUserCredentialsRequestCommand();
         requestMessage.setPasswordHash("password hash");
         requestMessage.setProfileUuid(null);
 
@@ -60,12 +59,12 @@ public class SecurityCore_RegisterNewProfile_Tests {
     }
 
     @Test
-    public void registerNewProfileCredentials_ExceptionOnNullOrEmptyPasswordHash_Test() {
+    public void registerNewProfileCredentials_ExceptionOnNullOrEmptyPasswordHash_Test() throws Exception {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("requestMessage.PasswordHash is null or empty");
 
-        RegisterNewUserCredentialsRequestMessage requestMessage = new RegisterNewUserCredentialsRequestMessage();
+        RegisterNewUserCredentialsRequestCommand requestMessage = new RegisterNewUserCredentialsRequestCommand();
         requestMessage.setPasswordHash(null);
         requestMessage.setProfileUuid(UUID.randomUUID());
 
@@ -73,7 +72,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
     }
 
     @Test
-    public void registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test() {
+    public void registerNewProfileCredentials_ExceptionWhenCallingDatabase_Test() throws Exception {
 
         final UUID profileUuid = UUID.randomUUID();
         final String passwordHash = "password hash";
@@ -81,20 +80,20 @@ public class SecurityCore_RegisterNewProfile_Tests {
         when(securityDAO.findByProfileUuid(profileUuid))
                 .thenThrow(Exception.class);
 
-        RegisterNewUserCredentialsRequestMessage requestMessage = new RegisterNewUserCredentialsRequestMessage();
+        RegisterNewUserCredentialsRequestCommand requestMessage = new RegisterNewUserCredentialsRequestCommand();
         requestMessage.setPasswordHash(passwordHash);
         requestMessage.setProfileUuid(profileUuid);
 
+        thrown.expect(Exception.class);
+
         // main function call
-        RegisterNewUserCredentialsResponseMessage responseMessage = securityCore.registerNewProfileCredentials(requestMessage);
+        boolean responseStatus = securityCore.registerNewProfileCredentials(requestMessage);
 
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
-
-        assertEquals(responseMessage.getRegistrationStatus(), RegisterNewUserCredentialsResponseStatus.GENERAL_ERROR);
     }
 
     @Test
-    public void registerNewProfileCredentials_DuplicateRecordFound_Test() {
+    public void registerNewProfileCredentials_DuplicateRecordFound_Test() throws Exception {
 
         final UUID profileUuid = UUID.randomUUID();
         final String passwordHash = "password hash";
@@ -102,36 +101,36 @@ public class SecurityCore_RegisterNewProfile_Tests {
         when(securityDAO.findByProfileUuid(profileUuid))
                 .thenReturn(Collections.<UserSecurityDAODataModel>singletonList(new UserSecurityDAODataModel()));
 
-        RegisterNewUserCredentialsRequestMessage requestMessage = new RegisterNewUserCredentialsRequestMessage();
+        RegisterNewUserCredentialsRequestCommand requestMessage = new RegisterNewUserCredentialsRequestCommand();
         requestMessage.setPasswordHash(passwordHash);
         requestMessage.setProfileUuid(profileUuid);
 
+        thrown.expect(IllegalArgumentException.class);
+
         // main function call
-        RegisterNewUserCredentialsResponseMessage responseMessage = securityCore.registerNewProfileCredentials(requestMessage);
+        securityCore.registerNewProfileCredentials(requestMessage);
 
         // assertion / validation
         ArgumentCaptor<UserSecurityDAODataModel> daoRecordCaptor = ArgumentCaptor.forClass(UserSecurityDAODataModel.class);
 
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
         verify(securityDAO, times(0)).save(daoRecordCaptor.capture());
-
-        assertEquals(responseMessage.getRegistrationStatus(), RegisterNewUserCredentialsResponseStatus.PROFILE_UUID_ALREADY_REGISTERED);
     }
 
     @Test
-    public void registerNewProfileCredentials_RecordSavedSuccesfully_Test() {
+    public void registerNewProfileCredentials_RecordSavedSuccesfully_Test() throws Exception {
         final UUID profileUuid = UUID.randomUUID();
         final String passwordHash = "password hash";
 
         when(securityDAO.findByProfileUuid(profileUuid))
                 .thenReturn(Collections.<UserSecurityDAODataModel>emptyList());
 
-        RegisterNewUserCredentialsRequestMessage requestMessage = new RegisterNewUserCredentialsRequestMessage();
+        RegisterNewUserCredentialsRequestCommand requestMessage = new RegisterNewUserCredentialsRequestCommand();
         requestMessage.setPasswordHash(passwordHash);
         requestMessage.setProfileUuid(profileUuid);
 
         // main function call
-        RegisterNewUserCredentialsResponseMessage responseMessage = securityCore.registerNewProfileCredentials(requestMessage);
+        boolean responseStatus = securityCore.registerNewProfileCredentials(requestMessage);
 
         // assertion / validation
         ArgumentCaptor<UserSecurityDAODataModel> daoRecordCaptor = ArgumentCaptor.forClass(UserSecurityDAODataModel.class);
@@ -139,7 +138,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
         verify(securityDAO, times(1)).save(daoRecordCaptor.capture());
 
-        assertEquals(responseMessage.getRegistrationStatus(), RegisterNewUserCredentialsResponseStatus.OK);
+        assertEquals(true, responseStatus);
 
         assertEquals(profileUuid, daoRecordCaptor.getValue().getProfileUuid());
         assertEquals(passwordHash, daoRecordCaptor.getValue().getPasswordHash());

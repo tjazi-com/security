@@ -1,8 +1,6 @@
 package com.tjazi.security.core.service.controller;
 
 import com.tjazi.security.core.service.core.SecurityCore;
-import com.tjazi.security.messages.RegisterNewUserCredentialsRequestMessage;
-import com.tjazi.security.messages.RegisterNewUserCredentialsResponseMessage;
 import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import com.tjazi.security.messages.UserAuthenticationResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/security")
-public class SecurityController {
+public class SecurityProfileAuthenticationController {
 
     @Autowired
     private SecurityCore securityCore;
-
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public RegisterNewUserCredentialsResponseMessage registerNewProfileCredentials(
-            @RequestBody RegisterNewUserCredentialsRequestMessage requestMessage) {
-
-        return securityCore.registerNewProfileCredentials(requestMessage);
-    }
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public UserAuthenticationResponseMessage authenticateProfile(

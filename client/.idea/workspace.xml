@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="815414b0-be1d-4f91-81a9-2735ab58f6ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../messages/src/main/java/com/tjazi/security/messages/RegisterNewUserCredentialsRequestCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tjazi/security/client/SecurityClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/tjazi/security/client/SecurityClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tjazi/security/client/SecurityClientImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/tjazi/security/client/SecurityClientImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../messages/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../messages/.idea/workspace.xml" />
     </list>
     <ignored path="security-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -540,12 +536,12 @@
       <workItem from="1447161056816" duration="1597000" />
       <workItem from="1447173576363" duration="153000" />
       <workItem from="1447708367614" duration="1262000" />
-      <workItem from="1450284221782" duration="920000" />
+      <workItem from="1450284221782" duration="1099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8578000" />
+    <option name="totallyTimeSpent" value="8757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />

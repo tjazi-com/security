@@ -100,8 +100,8 @@ public class SecurityCoreImpl implements SecurityCore {
     }
 
     @Override
-    public RegisterNewUserCredentialsResponseMessage registerNewProfileCredentials(
-            RegisterNewUserCredentialsRequestMessage requestMessage) {
+    public boolean registerNewProfileCredentials(
+            RegisterNewUserCredentialsRequestCommand requestMessage) throws Exception {
 
         if (requestMessage == null) {
             String errorMessage = "requestMessage is null";
@@ -128,8 +128,6 @@ public class SecurityCoreImpl implements SecurityCore {
             throw new IllegalArgumentException(errorMessage);
         }
 
-        RegisterNewUserCredentialsResponseMessage responseMessage = new RegisterNewUserCredentialsResponseMessage();
-
         try {
             List<UserSecurityDAODataModel> duplicateProfiles = userSecurityDAO.findByProfileUuid(profileUuid);
 
@@ -139,8 +137,7 @@ public class SecurityCoreImpl implements SecurityCore {
                 log.error("Found {} duplicated security profiles for Profile UUID: {}",
                         numberOfDuplicatedProfiles, profileUuid);
 
-                responseMessage.setRegistrationStatus(RegisterNewUserCredentialsResponseStatus.PROFILE_UUID_ALREADY_REGISTERED);
-                return responseMessage;
+                throw new IllegalArgumentException("Duplicated Profile UUID.");
             }
 
             UserSecurityDAODataModel daoDataModel = new UserSecurityDAODataModel();
@@ -149,15 +146,13 @@ public class SecurityCoreImpl implements SecurityCore {
 
             userSecurityDAO.save(daoDataModel);
 
-            responseMessage.setRegistrationStatus(RegisterNewUserCredentialsResponseStatus.OK);
-            return responseMessage;
+            return true;
 
         } catch (Exception ex) {
 
             log.error("Exception when calling userSecurityDAO.save()");
 
-            responseMessage.setRegistrationStatus(RegisterNewUserCredentialsResponseStatus.GENERAL_ERROR);
-            return responseMessage;
+            throw ex;
         }
     }
 }
