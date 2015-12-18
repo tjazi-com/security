@@ -31,9 +31,12 @@ public class SecurityClientImpl implements SecurityClient {
 
     private final static Logger log = LoggerFactory.getLogger(SecurityClientImpl.class);
 
-    private final static String AUTHENTICATE_USER_PROFILE_PATH = "/security/authenticate";
+    private final static String SECURITY_SERVICE_NAME = "security-service-core";
 
-    public void registerNewUserCredentials(UUID profileUuid, String passwordHash) {
+    private final static String REGISTER_USER_PROFILE_PATH = "http://" + SECURITY_SERVICE_NAME + "/security/register";
+    private final static String AUTHENTICATE_USER_PROFILE_PATH = "http://" + SECURITY_SERVICE_NAME + "/security/authenticate";
+
+    public boolean registerNewUserCredentials(UUID profileUuid, String passwordHash) {
 
         if (profileUuid == null) {
             String errorMessage = "profileUuid is null";
@@ -55,6 +58,8 @@ public class SecurityClientImpl implements SecurityClient {
         requestMessage.setPasswordHash(passwordHash);
 
         this.messageChannel.send(MessageBuilder.withPayload(requestMessage).build());
+
+        return restTemplate.postForObject(REGISTER_USER_PROFILE_PATH, requestMessage, boolean.class, (Object) null);
     }
 
     public UserAuthenticationResponseMessage authenticateUser(UUID profileUuid, String passwordHash)
