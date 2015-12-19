@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f649465-1ebb-43c7-b4c3-a73dfc7d3a6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/main/java/com/tjazi/security/client/SecurityClient.java" afterPath="$PROJECT_DIR$/../client/src/main/java/com/tjazi/security/client/SecurityClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/main/java/com/tjazi/security/client/SecurityClientImpl.java" afterPath="$PROJECT_DIR$/../client/src/main/java/com/tjazi/security/client/SecurityClientImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tjazi-security-core.iws" />
@@ -95,8 +94,8 @@
       <file leaf-file-name="bootstrap.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.032051284">
+              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -1312,7 +1311,7 @@
       <workItem from="1447708402801" duration="2314000" />
       <workItem from="1450110207783" duration="1738000" />
       <workItem from="1450159022223" duration="29000" />
-      <workItem from="1450444348842" duration="2655000" />
+      <workItem from="1450444348842" duration="2875000" />
     </task>
     <servers />
   </component>
@@ -1349,7 +1348,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32443000" />
+    <option name="totallyTimeSpent" value="32663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
@@ -1799,8 +1798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.032051284">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
           <folding />
         </state>
       </provider>

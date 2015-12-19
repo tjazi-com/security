@@ -11,6 +11,7 @@ import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.UUID;
@@ -19,15 +20,11 @@ import java.util.UUID;
  * Created by Krzysztof Wasiak on 09/10/15.
  */
 
-@EnableBinding(Source.class)
+@Service
 public class SecurityClientImpl implements SecurityClient {
 
     @Autowired
     private RestTemplate restTemplate;
-
-    @Autowired
-    @Output(Source.OUTPUT)
-    private MessageChannel messageChannel;
 
     private final static Logger log = LoggerFactory.getLogger(SecurityClientImpl.class);
 
@@ -56,8 +53,6 @@ public class SecurityClientImpl implements SecurityClient {
 
         requestMessage.setProfileUuid(profileUuid);
         requestMessage.setPasswordHash(passwordHash);
-
-        this.messageChannel.send(MessageBuilder.withPayload(requestMessage).build());
 
         return restTemplate.postForObject(REGISTER_USER_PROFILE_PATH, requestMessage, boolean.class, (Object) null);
     }
