@@ -1,6 +1,8 @@
 package com.tjazi.security.core.service.dao;
 
 import com.tjazi.security.core.service.dao.model.UserSecurityDAODataModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -17,4 +19,9 @@ public interface UserSecurityDAO extends CrudRepository<UserSecurityDAODataModel
      * @return List of security records matching given profile UUID
      */
     List<UserSecurityDAODataModel> findByProfileUuid(UUID profileUuid);
+
+    @Query("SELECT CASE WHEN COUNT(u) > 0 THEN 'true' ELSE 'false' END FROM UserSecurityDAODataModel u WHERE u.profileUuid = ?1 AND u.passwordHash = ?2")
+    boolean existsByProfileUuidPasswordHash(UUID profileUuid, String passwordHash);
+
+
 }

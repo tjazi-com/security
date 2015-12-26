@@ -33,11 +33,16 @@ public class SecurityProfileRegistrationController {
             return securityCore.registerNewProfileCredentials(requestMessage);
         }
         catch (Exception ex) {
-            log.error("Got unhandled exception: " + ex.toString());
+            log.error("Got unhandled exception during Security Profile Registration: " + ex.toString());
             throw ex;
         }
     }
 
+    /**
+     * Fallback method called by Hystrix when registration of the security profile fails
+     * @param requestMessage
+     * @return
+     */
     public boolean registerNewProfileCredentialsFallback(RegisterNewUserCredentialsRequestCommand requestMessage) {
         log.error("registerNewProfileCredentialsFallback called, something went wrong with security profile registration");
 
