@@ -1,7 +1,8 @@
 package com.tjazi.security.core.service.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.tjazi.security.core.service.core.SecurityCore;
+import com.tjazi.security.core.service.core.SecurityProfileAuthenticator;
+import com.tjazi.security.core.service.core.SecurityProfilePersister;
 import com.tjazi.security.messages.RegisterNewUserCredentialsRequestCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/security")
-public class SecurityProfileRegistrationController {
+public class SecurityProfilePersisterController {
 
-    private static final Logger log = LoggerFactory.getLogger(SecurityProfileRegistrationController.class);
+    private static final Logger log = LoggerFactory.getLogger(SecurityProfilePersisterController.class);
 
     @Autowired
-    private SecurityCore securityCore;
+    private SecurityProfilePersister securityProfilePersister;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @HystrixCommand(fallbackMethod = "registerNewProfileCredentialsFallback")
@@ -30,7 +31,7 @@ public class SecurityProfileRegistrationController {
 
         try
         {
-            return securityCore.registerNewProfileCredentials(requestMessage);
+            return securityProfilePersister.registerNewProfileCredentials(requestMessage);
         }
         catch (Exception ex) {
             log.error("Got unhandled exception during Security Profile Registration: " + ex.toString());

@@ -1,6 +1,6 @@
 package unittests;
 
-import com.tjazi.security.core.service.core.SecurityCoreImpl;
+import com.tjazi.security.core.service.core.SecurityProfilePersisterImpl;
 import com.tjazi.security.core.service.dao.UserSecurityDAO;
 import com.tjazi.security.core.service.dao.model.UserSecurityDAODataModel;
 import com.tjazi.security.messages.RegisterNewUserCredentialsRequestCommand;
@@ -12,7 +12,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.context.annotation.Profile;
 
 import java.util.Collections;
 import java.util.UUID;
@@ -25,13 +24,13 @@ import static org.mockito.Mockito.*;
  */
 
 @RunWith(MockitoJUnitRunner.class)
-public class SecurityCore_RegisterNewProfile_Tests {
+public class SecurityProfilePersister_Tests {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
     @InjectMocks
-    public SecurityCoreImpl securityCore;
+    public SecurityProfilePersisterImpl securityProfilePersister;
 
     @Mock
     public UserSecurityDAO securityDAO;
@@ -42,7 +41,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("requestMessage is null");
 
-        securityCore.registerNewProfileCredentials(null);
+        securityProfilePersister.registerNewProfileCredentials(null);
     }
 
     @Test
@@ -55,7 +54,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
         requestMessage.setPasswordHash("password hash");
         requestMessage.setProfileUuid(null);
 
-        securityCore.registerNewProfileCredentials(requestMessage);
+        securityProfilePersister.registerNewProfileCredentials(requestMessage);
     }
 
     @Test
@@ -68,7 +67,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
         requestMessage.setPasswordHash(null);
         requestMessage.setProfileUuid(UUID.randomUUID());
 
-        securityCore.registerNewProfileCredentials(requestMessage);
+        securityProfilePersister.registerNewProfileCredentials(requestMessage);
     }
 
     @Test
@@ -87,7 +86,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
         thrown.expect(Exception.class);
 
         // main function call
-        boolean responseStatus = securityCore.registerNewProfileCredentials(requestMessage);
+        boolean responseStatus = securityProfilePersister.registerNewProfileCredentials(requestMessage);
 
         verify(securityDAO, times(1)).findByProfileUuid(profileUuid);
     }
@@ -108,7 +107,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
         thrown.expect(IllegalArgumentException.class);
 
         // main function call
-        securityCore.registerNewProfileCredentials(requestMessage);
+        securityProfilePersister.registerNewProfileCredentials(requestMessage);
 
         // assertion / validation
         ArgumentCaptor<UserSecurityDAODataModel> daoRecordCaptor = ArgumentCaptor.forClass(UserSecurityDAODataModel.class);
@@ -130,7 +129,7 @@ public class SecurityCore_RegisterNewProfile_Tests {
         requestMessage.setProfileUuid(profileUuid);
 
         // main function call
-        boolean responseStatus = securityCore.registerNewProfileCredentials(requestMessage);
+        boolean responseStatus = securityProfilePersister.registerNewProfileCredentials(requestMessage);
 
         // assertion / validation
         ArgumentCaptor<UserSecurityDAODataModel> daoRecordCaptor = ArgumentCaptor.forClass(UserSecurityDAODataModel.class);

@@ -1,16 +1,10 @@
 package com.tjazi.security.client;
 
-import com.tjazi.security.messages.*;
-
-import com.tjazi.lib.messaging.rest.*;
+import com.tjazi.security.messages.RegisterNewUserCredentialsRequestCommand;
+import com.tjazi.security.messages.UserAuthenticationRequestMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.Output;
-import org.springframework.cloud.stream.messaging.Source;
-import org.springframework.messaging.MessageChannel;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -57,7 +51,7 @@ public class SecurityClientImpl implements SecurityClient {
         return restTemplate.postForObject(REGISTER_USER_PROFILE_PATH, requestMessage, boolean.class, (Object) null);
     }
 
-    public UserAuthenticationResponseMessage authenticateUser(UUID profileUuid, String passwordHash)
+    public boolean authenticateUser(UUID profileUuid, String passwordHash)
     {
         if (profileUuid == null) {
             String errorMessage = "profileUuid is null";
@@ -79,6 +73,6 @@ public class SecurityClientImpl implements SecurityClient {
         requestMessage.setPasswordHash(passwordHash);
 
         return restTemplate.postForObject(AUTHENTICATE_USER_PROFILE_PATH, requestMessage,
-                UserAuthenticationResponseMessage.class, (Object) null);
+                boolean.class, (Object) null);
     }
 }

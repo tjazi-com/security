@@ -10,5 +10,5 @@ import java.util.UUID;
 public interface SecurityClient {
 
     boolean registerNewUserCredentials(UUID profileUuid, String passwordHash);
-    UserAuthenticationResponseMessage authenticateUser(UUID profileUuid, String passwordHash);
+    boolean authenticateUser(UUID profileUuid, String passwordHash);
 }

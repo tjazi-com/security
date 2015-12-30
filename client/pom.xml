@@ -41,12 +41,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
-        </dependency>
-
-
         <!-- SECURITY internal deendencies -->
         <dependency>
             <groupId>com.tjazi.security</groupId>
@@ -54,11 +48,6 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.tjazi.lib</groupId>
-            <artifactId>messaging.rest</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
